@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="love.css">
+</head>
+
+<body>
+
+    <div class="form">
+        <nav class="upper">
+            <h1>LOVE CALCULATOR</h1>
+        </nav>
+        <div class="input">
+            <input type="text" id="name1" placeholder="Your Name">
+            <h3>+</h3>
+            <input type="text" id="name2" placeholder="Love Name">
+        </div>
+
+        <div class="button">
+            <button id="button-p" onclick="checkLove()">click</button>
+        </div>
+        <div class="love">
+            <input type="text" id="love-a" placeholder="Love Percentage">
+        </div>
+
+        <footer class="pray">
+            <h3 id="yesab">Good Bless Your RelationShip</h3>
+        </footer>
+    </div>
+
+    <script>
+        function checkLove() {
+            let name1 = document.getElementById('name1').value;
+            let name2 = document.getElementById('name2').value;
+            if ((name1 !== '') && (name2 !== '')) {
+                if ((name1.length < 3) && (name2.length < 3)) {
+                    alert("Minimum Length Is 3")
+                }
+                else if ((name1.length<3)&& (name2.length>3))
+                {
+                    alert("Your Name Length Should Be More Than 3  Or 3");
+                }
+                else if ((name2.length<3)&& (name1.length>3))
+                {
+                    alert("Love Name Length Should Be More Than 3 Or 3");
+                }
+                else {
+                    let loveData = Math.floor(Math.random() * 100);
+                    document.getElementById('love-a').value = loveData + "%";
+                }
+            }
+            else if ((name1 !== '') && (name2 === '')) {
+                alert("Please Enter Love Name ");
+            }
+            else if ((name1 === '') && (name2 !== '')) {
+                alert("Please Enter Your Name ");
+            }
+            else {
+                alert('Please Enter your name & Love Name First');
+            }
+        }
+    </script>
+</body>
+
+</html>
